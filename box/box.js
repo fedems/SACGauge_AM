@@ -47,53 +47,82 @@
 			am4core.useTheme(am4themes_animated);
 			// Themes end
 
-			// Create chart instance
-			var chart = am4core.create(divid, am4charts.XYChart);
+			// Create chart
+            var chart = am4core.createFromConfig({
 
-			// Add data
-			chart.data = data;
+                // Set inner radius
+                "innerRadius": -20,
+  
+                // Create axis
+                "xAxes": [{
+                "type": "ValueAxis",
+                "min": 0,
+                "max": 100,
+                "strictMinMax": true,
 
-			// Set input format for the dates
-			chart.dateFormatter.inputDateFormat = "dd-MM-yyyy";
+                // Add ranges
+                "axisRanges": [{
+                  "value": 0,
+                  "endValue": 70,
+                  "axisFill": {
+                    "fillOpacity": 1,
+                    "fill": "#88AB75",
+                    "zIndex": -1
+                  }
+                }, {
+                  "value": 70,
+                  "endValue": 90,
+                  "axisFill": {
+                    "fillOpacity": 1,
+                    "fill": "#DBD56E",
+                    "zIndex": -1
+                  }
+                }, {
+                  "value": 90,
+                  "endValue": 100,
+                  "axisFill": {
+                    "fillOpacity": 1,
+                    "fill": "#DE8F6E",
+                    "zIndex": -1
+                  }
+                }]
+              }],
 
-			// Create axes
-			var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-			dateAxis.renderer.grid.template.location = 0;
-			dateAxis.renderer.minGridDistance = 50;
+              // Add hands
+              "hands": [{
+                "type": "ClockHand",
+                "value": 65,
+                "fill": "#2D93AD",
+                "stroke": "#2D93AD",
+                "innerRadius": "50%",
+                "radius": "80%",
+                "startWidth": 15,
+                "pin": {
+                  "disabled": true
+                }
+              }, {
+                "type": "ClockHand",
+                "value": 22,
+                "fill": "#7D7C84",
+                "stroke": "#7D7C84",
+                "innerRadius": "50%",
+                "radius": "80%",
+                "startWidth": 15,
+                "pin": {
+                  "disabled": true
+                }
+              }]
 
-			var idx1 = title.indexOf('"');
-			var idx2 = title.indexOf(',');
-			var str_fin = title.substring(idx1, idx2);
+            }, "chartdiv", am4charts.GaugeChart);
 
-			dateAxis.title.text = str_fin;
-			dateAxis.title.fontWeight = "bold";
-
-			var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-
-			// Create series
-			var series = chart.series.push(new am4charts.LineSeries());
-			series.dataFields.valueY = "value";
-			series.dataFields.dateX = "date";
-			series.strokeWidth = 3;
-			series.fillOpacity = 0.5;
-
-			// Add vertical scrollbar
-			chart.scrollbarY = new am4core.Scrollbar();
-			chart.scrollbarY.marginLeft = 0;
-
-			// Add cursor
-			chart.cursor = new am4charts.XYCursor();
-			chart.cursor.behavior = "zoomY";
-			chart.cursor.lineX.disabled = true;
-
-			ArChartGauge.push({
-				'id': id,
-				'chart': chart
-			});
+                setInterval(function() {
+                  hand.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
+                  hand2.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
+                }, 2000);
 		} else {            	
-            	var foundIndex = Ar.findIndex(x => x.id == id);
+/*            	var foundIndex = Ar.findIndex(x => x.id == id);
     			console.log("foundIndex drawChart: " + foundIndex);
-    			ArChartGauge[foundIndex].chart.data = data;
+    			ArChartGauge[foundIndex].chart.data = data;*/
             }
 
     };
