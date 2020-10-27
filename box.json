@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-fd-googlesheetsstock",
-			"url": "https://fedems.github.io/SACamcharts/box/box.js",
+			"url": "https://fedems.github.io/SACGauge_AM/box.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}

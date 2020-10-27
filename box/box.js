@@ -14,11 +14,11 @@
 	`;
 
     //https://www.amcharts.com/lib/4/core.js
-    const amchartscorejs = "https://fedems.github.io/SACamcharts/box/core.js";
+    const amchartscorejs = "https://fedems.github.io/SACGauge_AM/core.js";
     //https://www.amcharts.com/lib/4/charts.js
-    const amchartschartsjs = "https://fedems.github.io/SACamcharts/box/charts.js";
+    const amchartschartsjs = "https://fedems.github.io/SACGauge_AM/charts.js";
     //https://www.amcharts.com/lib/4/themes/animated.js
-    const amchartsanimatedjs = "https://fedems.github.io/SACamcharts/box/animated.js";
+    const amchartsanimatedjs = "https://fedems.github.io/SACGauge_AM/animated.js";
 
 	function loadScript(src) {
 	  return new Promise(function(resolve, reject) {
