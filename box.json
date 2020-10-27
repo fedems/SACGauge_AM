@@ -1,0 +1,68 @@
+{
+	"id": "com.fd.googlesheetsstock",
+	"version": "1.0.0",
+	"name": "Google Sheets Stock",
+	"description": "A Google Sheets Stock demo",
+	"newInstancePrefix": "Googlesheetsstock", 
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAb1BMVEX///+ZmZl4dXdBPj9hYGGOjpE6ODo8OjwvLC0lISIpJSaMiooyLzH/cjMxLi9GREb/ZSk2MzV9fX1MSks4NjcrJyn/WR9ycnJRT1AtKiv/TRVdXF1ra2v7VCfJyMk+PD6tra+rqqtUUlU0MTNqaGpjxDg2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAKhJREFUGNM9z9EagiAMBeDpEGkWNAGhqFTq/Z8xwK/+q7PtZgeg6npEMcBPJ0d1Kmg6ZnFGRZcLESnR7tpoouuVSCPPZYHWee+XxTsrvQeYQrwV97tL5uZigMeoqucTUSnWEVBX4fWaW2BYz1W3bXsLDPldcD8MoYZ3glmMjNbGLJk5igDgnLTGHazdAPo1Gdms2bZXhRmbMuNR5rNWJuX075sMYg57jV94IQ2Xqt1atQAAAABJRU5ErkJggg==",
+	"vendor": "FD",
+	"eula": "EULA",
+	"license": "2.0",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-fd-googlesheetsstock",
+			"url": "https://fedems.github.io/SACamcharts/box/box.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"value": {
+			"type": "string",
+			"description": "value",
+			"default": ""
+		},
+		"formula": {
+			"type": "string",
+			"description": "formula",
+			"default": ""
+		},
+		"width": {
+			"type": "integer",
+			"default": 50
+		},
+		"height": {
+			"type": "integer",
+			"default": 50
+		}
+	},
+	"methods": {
+		"setValue": {
+			"description": "Sets the Google Sheets Stock value.",
+			"parameters": [
+				{
+					"name": "newValue",
+					"type": "string",
+					"description": "Google Sheets Value"
+				},
+				{
+					"name": "newFormula",
+					"type": "string",
+					"description": "Google Sheets Formula"
+				}
+			],
+			"body": "this.value = newValue; this.formula = newFormula;"
+		},
+		"getValue": {
+			"returnType": "string",
+			"description": "Returns the Google Sheets Stock value.",
+			"body": "return this.value;"
+		}
+	},
+	"events": {
+		"onClick": {
+			"description": "Called when the user clicks the Box."
+		}
+	}
+}
