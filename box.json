@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-fd-amchartsgauge",
-			"url": "https://fedems.github.io/SACGauge_AM/box.js",
+			"url": "https://fedems.github.io/SACGauge_AM/box/box.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
