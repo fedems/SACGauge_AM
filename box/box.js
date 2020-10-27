@@ -115,10 +115,10 @@
 
             }, "chartdiv", am4charts.GaugeChart);
 
-                setInterval(function() {
-                  hand.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
-                  hand2.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
-                }, 2000);
+            setInterval(function() {
+                hand.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
+                hand2.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
+            }, 2000);
 		} else {            	
 /*            	var foundIndex = Ar.findIndex(x => x.id == id);
     			console.log("foundIndex drawChart: " + foundIndex);
@@ -256,5 +256,5 @@
 			console.log("onCustomWidgetDestroy");
         }
     }
-    customElements.define("com-fd-googlesheetsstock", Box);
+    customElements.define("com-fd-amchartsgauge", Box);
 })();
