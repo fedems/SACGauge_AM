@@ -215,7 +215,6 @@
 
 				async function LoadLibs() {
 					try {
-						await loadScript(googlesheetsjs);
 						await loadScript(amchartscorejs);				
 						await loadScript(amchartschartsjs);				
 						await loadScript(amchartsanimatedjs);
